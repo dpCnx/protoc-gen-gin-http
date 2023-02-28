@@ -4,10 +4,9 @@ import (
 	"flag"
 	"fmt"
 
+	"github.com/dpCnx/protoc-gen-gin-http/logic"
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/types/pluginpb"
-
-	logic2 "protoc-gen-gin-http/logic"
 )
 
 /*
@@ -23,7 +22,7 @@ var (
 func main() {
 	flag.Parse()
 	if *showVersion {
-		fmt.Printf("protoc-gen-gin-http %v\n", logic2.Release)
+		fmt.Printf("protoc-gen-gin-http %v\n", logic.Release)
 		return
 	}
 	protogen.Options{
@@ -34,7 +33,7 @@ func main() {
 			if !f.Generate {
 				continue
 			}
-			logic2.GenerateFile(gen, f, *omitempty)
+			logic.GenerateFile(gen, f, *omitempty)
 		}
 		return nil
 	})
