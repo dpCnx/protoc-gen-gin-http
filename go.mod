@@ -1,4 +1,4 @@
-module protoc-gen-gin-http
+module github.com/dpCnx/protoc-gen-gin-http
 
 go 1.19
 
